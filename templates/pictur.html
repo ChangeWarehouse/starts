@@ -1,0 +1,19 @@
+{% load static %}
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">
+                    图片显示
+                </h4>
+                <h4><a href="{% url 'tables' %}" style="text-decoration:none;">返回</a></h4>
+                <div>
+                    <img style="height: 200px;width: 200px" src="{% static 'pictures/1.jpg' %}"></img>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal -->
+    </div>
+</div>

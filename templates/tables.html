@@ -1,0 +1,119 @@
+{% extends 'layouts.html' %}
+{% block css %}
+    <style>
+        table {
+            table-layout: fixed;
+        }
+
+        td {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        a {
+            text-decoration:none;
+        }
+    </style>
+{% endblock %}
+{% block page-main %}
+    <div class="content-inner">
+        <!-- Page Header-->
+        <header class="page-header">
+            <div class="container-fluid">
+                <h2 class="no-margin-bottom">数据展示</h2>
+            </div>
+        </header>
+        <!-- Breadcrumb-->
+        <div class="breadcrumb-holder container-fluid">
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">Tables</li>
+            </ul>
+        </div>
+        <section class="tables align-content-center">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            {#                            <div class="card-close">#}
+                            {#                                <div class="dropdown">#}
+                            {#                                    <button type="button" id="closeCard1" data-toggle="dropdown" aria-haspopup="true"#}
+                            {#                                            aria-expanded="false" class="dropdown-toggle"><i#}
+                            {#                                            class="fa fa-ellipsis-v"></i></button>#}
+                            {#                                    <div aria-labelledby="closeCard1"#}
+                            {#                                         class="dropdown-menu dropdown-menu-right has-shadow"><a href="#"#}
+                            {#                                                                                                 class="dropdown-item remove">#}
+                            {#                                        <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i#}
+                            {#                                            class="fa fa-gear"></i>Edit</a></div>#}
+                            {#                                </div>#}
+                            {#                            </div>#}
+                            <div class="card-header d-flex align-items-center">
+                                <div class="table-hover">
+                                    <button><a href="{% url 'tables' %}" class="text-black" style="text-decoration:none;">全部对比</a></button>
+                                    <button><a href="{% url 'mobile' %}" class="text-black" style="text-decoration:none;">手机端对比</a></button>
+                                    <button><a href="{% url 'computer' %}" class="text-black" style="text-decoration:none;">电脑端对比</a></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-hover">
+                                    <table class="table table-bordered" style='table-layout:fixed;'>
+
+                                        <thead>
+                                        <tr>
+                                            <th>序号</th>
+                                            <th>来源</th>
+                                            <th>名称</th>
+                                            <th>时间</th>
+                                            <th>图片</th>
+                                            <th>视频</th>
+                                            {#                                            <th>操作</th>#}
+                                        </tr>
+                                        </thead>
+
+
+                                        <tbody>
+                                        {% for foo in dic %}
+                                            <tr>
+                                                <th>{{ forloop.counter }}</th>
+                                                <td>{{ foo.name }}</td>
+                                                <td>{{ foo.name }}</td>
+                                                <td>{{ foo.price }}</td>
+                                                <td><a href="{% url 'pictur' %}"
+                                                       class="btn btn-primary glyphicon glyphicon-search"
+                                                       data-toggle="tooltip" onclick="pro()"
+                                                       data-placement="top"
+                                                       title="点击查看"></a></td>
+                                                <td><a href="{% url 'modal' %}"
+                                                       class="btn btn-primary glyphicon glyphicon-search"
+                                                       data-toggle="tooltip" onclick="prom()"
+                                                       data-placement="top"
+                                                       title="点击播放"></a></td>
+                                                {#                                                <td><a href="{% url 'details' %}">详情</a></td>#}
+                                            </tr>
+                                        {% endfor %}
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page Footer-->
+        {% include 'bottombar.html' %}
+    </div>
+{% endblock %}
+{% block js %}
+    <script type="text/javascript">
+        function prom() {
+            $("#myModal").modal('show');
+        }
+    </script>
+    <script type="text/javascript">
+        function pro() {
+            $("#myModal").modal('show');
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="{% url 'upload' %}"     method="post"  enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>
+        用户名：<input type="text" name="uername">
+    </p>
+    <p>
+        头像：<input type="file" name="picture">
+    </p>
+
+    <p>
+        <input type="submit" value="上传">
+    </p>
+{#<img src="{% static image %}" alt="图片" width="200px" height="150px">#}
+</form>
+</body>
+</html>

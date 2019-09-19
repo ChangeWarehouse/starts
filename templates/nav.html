@@ -1,0 +1,97 @@
+<header class="header">
+    {% load static %}
+    <nav class="navbar">
+        <!-- Search Box-->
+        <div class="search-box">
+            <button class="dismiss"><i class="icon-close"></i></button>
+            <form id="searchForm" action="#" role="search">
+                <input type="search" placeholder="What are you looking for..." class="form-control">
+            </form>
+        </div>
+        <div class="container-fluid">
+            <div class="navbar-holder d-flex align-items-center justify-content-between">
+                <!-- Navbar Header-->
+                <div class="navbar-header">
+                    <!-- Navbar Brand --><a href="index.html" class="navbar-brand d-none d-sm-inline-block">
+                    <div class="brand-text d-none d-lg-inline-block"><strong> </strong><span>图灵实验室</span>
+                    </div>
+                    <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>Turing</strong></div>
+                </a>
+                    <a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+                </div>
+
+                <!-- Navbar Menu -->
+                <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                    <ul aria-labelledby="notifications" class="dropdown-menu">
+                        <li><a rel="nofollow" href="#" class="dropdown-item">
+                            <div class="notification">
+                                <div class="notification-content"><i class="fa fa-envelope bg-green"></i>You have 6
+                                    new
+                                    messages
+                                </div>
+                                <div class="notification-time"><small>4 minutes ago</small></div>
+                            </div>
+                        </a></li>
+                        <li><a rel="nofollow" href="#" class="dropdown-item">
+                            <div class="notification">
+                                <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2
+                                    followers
+                                </div>
+                                <div class="notification-time"><small>4 minutes ago</small></div>
+                            </div>
+                        </a></li>
+                        <li><a rel="nofollow" href="#" class="dropdown-item">
+                            <div class="notification">
+                                <div class="notification-content"><i class="fa fa-upload bg-orange"></i>Server
+                                    Rebooted
+                                </div>
+                                <div class="notification-time"><small>4 minutes ago</small></div>
+                            </div>
+                        </a></li>
+                        <li><a rel="nofollow" href="#" class="dropdown-item">
+                            <div class="notification">
+                                <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2
+                                    followers
+                                </div>
+                                <div class="notification-time"><small>10 minutes ago</small></div>
+                            </div>
+                        </a></li>
+                        <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>view
+                            all notifications </strong></a></li>
+                    </ul>
+
+                    <ul aria-labelledby="notifications" class="dropdown-menu">
+                        <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
+                            <div class="msg-body">
+                                <h3 class="h5">Jason Doe</h3><span>Sent You Message</span>
+                            </div>
+                        </a></li>
+                        <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
+                            <div class="msg-profile"><img src="{% static 'img/avatar-2.jpg' %}" alt="..."
+                                                          class="img-fluid rounded-circle"></div>
+                            <div class="msg-body">
+                                <h3 class="h5">Frank Williams</h3><span>Sent You Message</span>
+                            </div>
+                        </a></li>
+                        <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
+                            <div class="msg-profile"><img src="{% static 'img/avatar-3.jpg' %}" alt="..."
+                                                          class="img-fluid rounded-circle"></div>
+                            <div class="msg-body">
+                                <h3 class="h5">Ashley Wood</h3><span>Sent You Message</span>
+                            </div>
+                        </a></li>
+                        <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read
+                            all messages </strong></a></li>
+                    </ul>
+
+                    <li class="nav-item"><a href="{% url 'register' %}" class="nav-link logout"> <span
+                            class="d-none d-sm-inline">register</span><i
+                            class="fa fa-map-signs"></i></a></li>
+                    <li class="nav-item"><a href="{% url 'login' %}" class="nav-link logout"> <span
+                            class="d-none d-sm-inline">Logout</span><i
+                            class="fa fa-sign-out"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
